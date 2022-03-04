@@ -63,13 +63,24 @@ public class Level
         points = 0;
 
         // ***** Students Start here ******
+
+        //for (int i = 0; i < cellCount_X; i++)
+        //{
+        //    for (int j = 0; j < cellCount_Y; j++)
+        //    {
+        //        Element(element.Visuals, element.ElementType);
+        //    }
+        //}
+        //element.ElementType;
+        //element.Visuals;
+        
         //for (int i = 0; i < prefabs.Length; i++)
         //{
         //    prefabs[i] = element.Visuals;
         //}
     }
 
-
+    
     //---Methods---
     /// <summary>
     /// This Function implements the funcionality for MouseHover events. It is called each frame if no MouseClick is detected.
@@ -105,9 +116,9 @@ public class Level
     public int[] GetAdjacentCellsOfSameType(int cellIndex)
     {
         // comment the out the following line
-        return null;
+        //return null;
 
-        
+        return element.ElementType;
     }
 
     /// <summary>
@@ -140,7 +151,7 @@ public class Level
         // comment the out the following line
         //return -99;
 
-        return (numElements - 2) * 2;
+        return +((numElements - 2) * 2);
     }
 
     /// <summary>
