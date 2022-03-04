@@ -73,10 +73,11 @@ public class Level
         //}
         //element.ElementType;
         //element.Visuals;
-        
+
         //for (int i = 0; i < prefabs.Length; i++)
         //{
         //    prefabs[i] = element.Visuals;
+            
         //}
     }
 
@@ -116,9 +117,9 @@ public class Level
     public int[] GetAdjacentCellsOfSameType(int cellIndex)
     {
         // comment the out the following line
-        //return null;
+        return null;
 
-        return element.ElementType;
+        //return element.ElementType;
     }
 
     /// <summary>
