@@ -44,6 +44,7 @@ public class Level
     ElementGrid grid;
 
     //------STUDENTS IMPLEMENT FUNCTIONALITY BELOW---------------------------------------------------------------------
+    Element element;
     //---Constructor---
     /// <summary>
     /// Creates a new Level of the SameGame. Initializes the ElementGrid, fills the ElementgGrid with new random Elements (determined by the prefabs and the randomGeneratorSeed) and creates instances of the element visuals of the prefabs in the scene.
@@ -62,6 +63,10 @@ public class Level
         points = 0;
 
         // ***** Students Start here ******
+        //for (int i = 0; i < prefabs.Length; i++)
+        //{
+        //    prefabs[i] = element.Visuals;
+        //}
     }
 
 
@@ -76,6 +81,8 @@ public class Level
     {
         // comment the out the following line
         return -99;
+
+        
     }
 
     /// <summary>
@@ -99,6 +106,8 @@ public class Level
     {
         // comment the out the following line
         return null;
+
+        
     }
 
     /// <summary>
@@ -109,6 +118,16 @@ public class Level
     {
         // comment the out the following line
         return LevelState.NoElementsLeft;
+
+        //if (grid.CellCount > 0)
+        //{
+        //return LevelState.FurtherMovesPossible;
+        //return LevelState.NoMoreMovesPossible;
+        //}
+        //else if (grid.CellCount == 0)
+        //{
+        //    return LevelState.NoElementsLeft;
+        //}
     }
 
     /// <summary>
@@ -119,7 +138,9 @@ public class Level
     public int CalculatePoints(int numElements)
     {
         // comment the out the following line
-        return -99;
+        //return -99;
+
+        return (numElements - 2) * 2;
     }
 
     /// <summary>
