@@ -77,11 +77,11 @@ public class Level
         //for (int i = 0; i < prefabs.Length; i++)
         //{
         //    prefabs[i] = element.Visuals;
-            
+
         //}
     }
 
-    
+
     //---Methods---
     /// <summary>
     /// This Function implements the funcionality for MouseHover events. It is called each frame if no MouseClick is detected.
@@ -91,10 +91,13 @@ public class Level
     /// <param name="worldPosition">Point in worldcoordinates (this position is not necessarily inside of the grid bounds).</param>
     public int HoverCells(Vector3 worldPosition)
     {
+        //if (worldPosition = inside grid)
+        //{
+
+        //}
+        
         // comment the out the following line
         return -99;
-
-        
     }
 
     /// <summary>
@@ -116,10 +119,22 @@ public class Level
     /// <param name="cellIndex">Index of the original cell.</param>
     public int[] GetAdjacentCellsOfSameType(int cellIndex)
     {
-        // comment the out the following line
-        return null;
+        if (cellIndex > 0)
+        {
+            int[] typeArray = new int[0];
+            for (int i = 0; i < typeArray.Length; i++)
+            {
+                typeArray[i] = element.ElementType;
+            }
+            return typeArray;
+        }
 
-        //return element.ElementType;
+        // comment the out the following line
+        //if (cellIndex == 0)
+        //{
+        return null;
+        //}
+
     }
 
     /// <summary>
@@ -129,17 +144,23 @@ public class Level
     public LevelState CheckLevelState()
     {
         // comment the out the following line
-        return LevelState.NoElementsLeft;
+        if (grid.CellCount > 0)
+        {
+            //if (grid.GetNeighbours(element.ElementType) = element.ElementType)
+            //{
+                return LevelState.FurtherMovesPossible;
+            //}
+            //if (grid.GetNeighbours(element.ElementType) != element.ElementType)
+            //{
+                return LevelState.NoMoreMovesPossible;
+            //}
+        }
+        else if (grid.CellCount == 0)
+        {
+            return LevelState.NoElementsLeft;
+        }
 
-        //if (grid.CellCount > 0)
-        //{
-        //return LevelState.FurtherMovesPossible;
-        //return LevelState.NoMoreMovesPossible;
-        //}
-        //else if (grid.CellCount == 0)
-        //{
-        //    return LevelState.NoElementsLeft;
-        //}
+        return LevelState.NoElementsLeft;
     }
 
     /// <summary>
